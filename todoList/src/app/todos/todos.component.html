@@ -1,0 +1,18 @@
+<p>todos works!</p>
+<div>
+  <p>Todo List</p>
+  <input type="text" [(ngModel)]="newTodo" />
+  <button (click)="addToList(newTodo)">ADD</button>
+  <p>Todo : {{ newTodo }}</p>
+
+  <ul *ngFor="let todo of todos; let i = index">
+    <li>{{ todo }}</li>
+    <button (click)="doneTodo(i, todo)">Done</button>
+    <button (click)="removeTodo(i)">remove</button>
+  </ul>
+
+  <p>Done:</p>
+  <ul *ngFor="let done of doneTodos">
+    <li>{{ done }}</li>
+  </ul>
+</div>
